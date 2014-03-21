@@ -1,0 +1,722 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800);
+
+html{
+	font-size: 100%;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 600;
+	overflow-x: hidden;
+}
+
+body{
+	background-image: url('../images/background.jpg');
+	background-position: top center;
+	background-repeat: repeat;
+	color: #333;
+}
+
+span.italic{
+	font-style:italic !important;
+}
+
+.underline{
+	text-decoration:underline;
+}
+
+.shadow{
+	text-shadow: 0px 4px 6px #666;
+}
+
+div.promoBlock{
+	margin: 0 auto;
+	display: block;
+	width: 75%;
+}
+
+div.packageBlock{
+	margin: 0 auto;
+	display: block;
+	width: 75%;
+}
+
+div.contactBlock{
+	margin: 0 auto;
+	display: block;
+	width: 75%;	
+}
+
+ul.styledList{
+	margin-left: 0;
+	padding-left: 0;
+	list-style: none;
+}
+
+
+ul.styledList li{
+	padding-left: 15px;
+	padding-bottom: 15px;
+	background-image:url(../images/flowerBullet.png);
+	background-repeat: no-repeat;
+	background-position: -5px 1px;
+}
+
+ul.styledList li.sub{
+	padding-top: 5px;
+	padding-left: 25px;
+	background-image:url(../images/sub_bullet.png);
+	background-repeat: no-repeat;
+	background-position: 5px 8px;
+}
+
+.centered{
+	text-align: center;
+}
+
+p.no-wrap{
+	overflow: hidden;
+	padding-left: 15px;
+}
+
+div.difference{
+	width: 85%;
+	position: relative;
+	left: 185px;
+}
+
+h1,h2,h3,h4,h5{
+	margin: 0 40px 0 40px;
+	margin-top: 25px;
+	margin-bottom: 25px;
+	color: #5E005E;
+}
+
+.noLeftMargin{
+	margin-left: 0;
+}
+
+p{
+	margin: 0 40px 0 40px;
+	font-size: 16px;
+	line-height: 22px;
+	color: #000;
+	/*color: #403152;*/
+	width: auto;
+}
+
+a{
+	text-decoration: none;	
+}
+
+a.email{
+	color: #666;
+	text-decoration: underline;
+}
+
+a.email:hover{
+	color: #5E005E;
+	text-decoration: none;
+	
+}
+
+a:hover{
+	color: white;
+	text-decoration: underline;
+}
+
+
+
+/* Containers */
+
+div#container{
+	width: 100%;
+	height: 100%;
+}
+
+div#headerWrap{
+	/*opacity: 0.75;*/
+	position: relative;
+	border-radius: 10px;
+	margin: 0 auto;
+	margin-top: 50px;
+	width: 935px;
+	padding-left: 25px;
+	padding-right: 25px;
+	//background-image: url('../images/binding_light.png');
+	background-repeat: repeat;
+	background-color: #E6DEDC;
+	z-index: 1;
+}
+
+div#header{
+	position: relative;
+	margin-right: auto;
+	margin-left: auto;
+	margin-bottom: 25px;
+	width: 960px;
+	height: 215px;
+	z-index: 2;
+}
+
+div#headerContent{
+	position: relative;
+	opacity: 1;
+	float: right;
+	height: 100%;
+	width: 675px;
+	z-index: 3;	
+}
+div#bannerWrap{
+	position: relative;
+	bottom: 137px;
+	left: 0px;
+
+}
+
+div#bannerWrap img.bannerItem{
+	position: absolute;
+	width: 675px;
+	height: 205px;
+	border-top-right-radius: 10px;
+	border-bottom-right-radius: 10px;
+}
+
+div#headerContent span.topHeader h3{
+	position: relative;
+	z-index: 99;
+	right: 40px;
+	width: 676px;
+	top: -25px;
+	color: #FFF;
+	background: #333;
+	text-align: center;
+	padding-bottom: 5px;
+	padding-top: 5px;
+	border-top-right-radius: 10px;
+}
+
+div#headerContent span.bottomHeader h3{
+	position: relative;
+	z-index: 99;
+	opacity: 0.8;
+	right: 40px;
+	width: 676px;
+	top: 95px;
+	color: #FFF;
+	background: #333;
+	text-align: center;
+	padding-bottom: 5px;
+	padding-top: 5px;
+	border-bottom-right-radius: 10px;
+}
+
+div#logo{
+	position: relative;
+	/*opacity: 1;*/
+	float: left;
+	height: 100%;
+	width: 260px;
+	z-index: 3;
+}
+
+div#logo img.logo{
+	position: absolute;
+	width: 300px;
+	height: 220px;
+	bottom: -3px;
+	right: -15px;
+
+}
+
+div#footerWrap{
+	/*opacity: 0.75;*/
+	position: relative;
+	border-radius: 10px;
+	margin: 0 auto;
+	margin-top: 25px;
+	width: 1011px;
+	/*background-image: url('../images/binding_light.png');
+	
+	background-repeat: repeat;*/
+/*	padding-left: 25px;
+	padding-right: 25px;*/
+	background-color: #E6DEDC;
+
+	z-index: 1;
+}
+
+div#footer{
+	margin: 0 auto;
+	margin-top: 5px;
+	height: 195px;
+	opacity: 1;
+
+}
+
+div#footerStage{
+	display: block;
+	height: 150px;
+}
+
+div#footerStage div.footerLeft{
+	width: 63%;
+	height: 140px;
+	float: left;
+	padding-bottom: 10px;
+
+	
+}
+
+div#footerStage div.footerRight{
+	width: 36%;
+	display: inline-block;
+	height: 140px;
+	float: right;
+	margin-top: 12px;
+	
+
+}
+
+div#footerStage div.footerRight span.icon{
+	position: relative;
+	top: 10px;
+}
+div#footerStage div.footerRight span.icon img{
+	height: 50px;
+	width: 50px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+div#footerStage div.footerLeft span.smallLogo img{
+	position: absolute;
+	left: 0px;
+	bottom: 40px;
+	height: 155px;
+	width: 280px;
+}
+
+div#footerStage div.footerLeft span.desc{
+	position: absolute;
+	left: 350px;
+	bottom: 75px;
+	height: 90px;
+	width: 215px;
+	line-height: 34px;
+	text-align: center;
+	font-size: 0.9em;
+	color: #4F248E;
+	font-weight: bold;
+}
+
+div#footerStage div.footerRight h4{
+	margin: 0;
+	padding: 0;
+	margin-left: 15px;
+	margin-top: 10px;
+	color: #4F248E;
+}
+
+div#footerStage div.footerBottom{
+	width: 100%;
+	height: 35px;
+	clear: both;
+	border-top: 8px ridge #4F248E;
+	background-color: #444;
+	opacity: 0.8;
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+	
+	
+}
+div#footerStage div.footerBottom ul#footNav {
+	margin: 0 auto;
+	text-align: center;
+	line-height: 30px;
+}
+div#footerStage div.footerBottom ul#footNav li{
+	display: inline-block;
+	padding-left: 30px;
+	padding-right: 30px;	
+}
+div#footerStage div.footerBottom ul#footNav li a{
+	display: block;
+	text-decoration: none;
+	color: #FFF;
+}
+div#footerStage div.footerBottom ul#footNav li a:hover{
+	text-decoration: underline;
+	color: #FFF; 
+}
+
+div#contentWrap{
+	background-image: url('../images/binding_light.png');
+	background-repeat: repeat;
+	border-radius: 10px;
+	padding: 25px;
+	overflow: hidden;
+	margin: 0 auto;
+	width: 960px;
+	min-height: 850px;
+	height: auto;
+
+	background-color: #F3F6EF;
+}
+
+div#content{
+	margin: 0 auto;
+	width: 960px;
+	position: relative;
+	z-index:0;
+
+}
+
+div#main{
+	position: inherit;
+	display: block;
+	float: left;
+	width: 960px;
+
+}
+
+div#side{
+	display: none;
+	float: none;
+	width: 0;
+	
+
+}
+
+div#nav{
+	position: relative;
+	margin: 0 auto;	
+	margin-bottom: -25px;
+	top: -25px;
+	height: 75px;
+	width: 1000px;
+	
+	z-index: 3;
+		
+}
+
+div#nav ul{
+	margin-left: -20px;
+	margin-right: 20px;
+	list-style-type: none;
+	width: 100%;
+}
+
+div#nav li{
+	float: left;
+}
+
+
+div#nav a{
+	display: block;
+	padding:15px;
+	padding-left: 25px;
+	padding-right: 25px;
+	width: 85px;
+	font-size: 1em;
+	border-left: solid;
+	border-right: solid;
+	border-color: #806380;
+	border-width: 1px;
+	text-decoration: none;
+	text-align: center;
+	color: #FFF;
+	background: -webkit-gradient(linear, left top, left bottom, from(#5E307A), to(#333));
+	background: -moz-linear-gradient(top,  #5E307A,  #333);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#5E307A', endColorstr='#333');
+	background: -ms-linear-gradient(top, #5E307A, #333);
+		
+}
+
+div#nav ul li.selected a{
+	background: -webkit-gradient(linear, left top, left bottom, from(#666), to(#333));
+	background: -moz-linear-gradient(top,  #666,  #333);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#666', endColorstr='#333');
+	background: -ms-linear-gradient(top, #666, #333);
+}
+
+div#nav a.first{
+	border-top-left-radius: 25px;
+	border-bottom-left-radius: 25px;
+}
+
+div#nav a.last{
+	border-top-right-radius: 25px;
+	border-bottom-right-radius: 25px;
+}
+
+div#nav a:hover{
+
+	background: -webkit-gradient(linear, left top, left bottom, from(#5E307A), to(#999));
+	background: -moz-linear-gradient(top,  #5E307A,  #999);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#5E307A', endColorstr='#999');
+	background: -ms-linear-gradient(top, #5E307A, #999);
+	
+}
+
+div#footerContent{
+	width: 960px;
+	height: 100%;
+	margin: 0 auto;	
+}
+
+div.leftNoMargin{
+	margin: 0;
+	padding: 15px;
+	float: left;
+	border-right: solid;
+	border-color: #000;
+	border-width: 1px;
+	
+}
+
+div.left{
+	border-right: solid;
+	border-color: #000;
+	border-width: 1px;
+	margin-left: 25px;
+	float: left;
+}
+
+
+
+
+.clearfix{
+	clear: both;
+}
+
+/*Main Heading Ribbon*/
+.ribbon {
+  font-size: 22px !important;
+  /* This ribbon is based on a 16px font side and a 24px vertical rhythm. I've used em's to position each element for scalability. If you want to use a different font size you may have to play with the position of the ribbon elements */
+  left: 20%;
+  width: 50%;
+  position: relative;
+  background: #643A7D;
+  color: #fff;
+  text-align: center;
+  padding: 1em 2em; /* Adjust to suit */
+  margin: 0 0 3em; /* Based on 24px vertical rhythm. 48px bottom margin - normally 24 but the ribbon 'graphics' take up 24px themselves so we double it. */
+-moz-box-shadow: 0px 5px 5px #666;
+-webkit-box-shadow: 0px 5px 5px #666;
+box-shadow: 0px 5px 5px #666;
+}
+.ribbon:before, .ribbon:after {
+  content: "";
+  position: absolute;
+  display: block;
+  bottom: -1em;
+  border: 1.5em solid #765B87;
+  z-index: -1;
+}
+.ribbon:before {
+  left: -2em;
+  border-right-width: 1.5em;
+  border-left-color: transparent;
+}
+.ribbon:after {
+  right: -2em;
+  border-left-width: 1.5em;
+  border-right-color: transparent;
+}
+.ribbon .ribbon-content:before, .ribbon .ribbon-content:after {
+  content: "";
+  position: absolute;
+  display: block;
+  border-style: solid;
+  border-color: #333 transparent transparent transparent;
+  bottom: -1em;
+  
+}
+.ribbon .ribbon-content:before {
+  left: 0;
+  border-width: 1em 0 0 1em;
+}
+.ribbon .ribbon-content:after {
+  right: 0;
+  border-width: 1em 1em 0 0;
+}
+
+/*SubHeading Ribbon*/
+.subRibbon {
+  font-size: 18px !important;
+  /* This ribbon is based on a 16px font side and a 24px vertical rhythm. I've used em's to position each element for scalability. If you want to use a different font size you may have to play with the position of the ribbon elements */
+  left: 32%;
+  width: 25%;
+  position: relative;
+  background: #333;
+  color: #fff;
+  text-align: center;
+  padding: 1em 2em; /* Adjust to suit */
+  margin: 0 0 3em; /* Based on 24px vertical rhythm. 48px bottom margin - normally 24 but the ribbon 'graphics' take up 24px themselves so we double it. */
+-moz-box-shadow: 0px 5px 5px #666;
+-webkit-box-shadow: 0px 5px 5px #666;
+box-shadow: 0px 5px 5px #666;
+}
+.subRibbon:before, .subRibbon:after {
+  content: "";
+  position: absolute;
+  display: block;
+  bottom: -1em;
+  border: 1.5em solid #666;
+  z-index: -1;
+}
+.subRibbon:before {
+  left: -2em;
+  border-right-width: 1.5em;
+  border-left-color: transparent;
+}
+.subRibbon:after {
+  right: -2em;
+  border-left-width: 1.5em;
+  border-right-color: transparent;
+}
+.subRibbon .subRibbon-content:before, .subRibbon .subRibbon-content:after {
+  content: "";
+  position: absolute;
+  display: block;
+  border-style: solid;
+  border-color: #333 transparent transparent transparent;
+  bottom: -1em;
+  
+}
+.subRibbon .subRibbon-content:before {
+  left: 0;
+  border-width: 1em 0 0 1em;
+}
+.subRibbon .subRibbon-content:after {
+  right: 0;
+  border-width: 1em 1em 0 0;
+}
+
+/*Top Ribbon*/
+.topRibbon {
+  font-size: 16px !important;
+  /* This ribbon is based on a 16px font side and a 24px vertical rhythm. I've used em's to position each element for scalability. If you want to use a different font size you may have to play with the position of the ribbon elements */
+  left: 12%;
+  border-radius: 5px;
+  bottom: 5px;;
+  width: 85%;
+  position: relative;
+  background: #CBCBCB;
+  color: #333;
+  text-align: center;
+  padding: 1em 2em; /* Adjust to suit */
+  margin: 0 0 3em; /* Based on 24px vertical rhythm. 48px bottom margin - normally 24 but the ribbon 'graphics' take up 24px themselves so we double it. */
+-moz-box-shadow: 0px 5px 5px #666;
+-webkit-box-shadow: 0px 5px 5px #666;
+box-shadow: 0px 5px 5px #666;
+}
+ .topRibbon:after {
+  content: "";
+  position: absolute;
+  display: block;
+  bottom: -1em;
+  border: 1.5em solid #666;
+  z-index: -10;
+}
+/*.topRibbon:before {
+  left: -2em;
+  border-right-width: 1.5em;
+  border-left-color: transparent;
+}*/
+.topRibbon:after {
+  right: -2em;
+  border-left-width: 1.5em;
+  border-right-color: transparent;
+
+}
+.topRibbon .topRibbon-content:after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  display: block;
+  border-style: solid;
+  border-color: #333 transparent transparent transparent;
+  bottom: -1em;
+  
+}
+.topRibbon .topRibbon-content:before {
+  left: 0;
+  border-width: 1em 0 0 1em;
+}
+.topRibbon .topRibbon-content:after {
+  right: 0;
+  border-width: 1em 1em 0 0;
+}
+
+div#contactForm{
+	border: 1px solid #666;
+	box-shadow: 0px 5px 10px #666;
+	padding: 15px;
+	width: 65%;
+	background: #CBCBCB;
+}
+
+div#contactForm form label{
+	display: inline-block;
+	width: 100px;
+	font-weight: bold;
+	font-size: 0.85em;
+}
+
+div#contactForm form label + input[type="text"]{
+	width: 275px;
+	height: 20px;
+	margin-bottom: 5px;
+	font-size: 0.85em;
+	padding: 5px 10px 5px 10px;
+	box-shadow: inset 1px 0px 9px #666;
+	border: 0;
+	border-radius: 5px;
+}
+
+div#contactForm form label#commentLabel + textarea{
+	width: 275px;
+	height: 150px;
+	margin-bottom: 5px;
+	font-size: 0.85em;
+	padding: 5px 10px 5px 10px;
+	box-shadow: inset 1px 0px 9px #666;
+	border: 0;
+	border-radius: 5px;
+}
+
+span.commentContainer *{
+	vertical-align:top;
+}
+
+span.note{
+	position: relative;
+	top: -10px;
+	font-size: 0.75em;
+	
+}
+
+input[type="submit"]{
+    background-color: #5D9AD0;
+    background-image: linear-gradient(to bottom, #5E307A, #999);
+    background-repeat: repeat-x;
+	border: 1px solid #CBCBCB;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2) inset, 0 1px 2px rgba(0, 0, 0, 0.05);
+    color: #FFF;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 14px;
+	font-weight: bold;
+    line-height: 20px;
+    margin-bottom: 0;
+	margin-top: 10px;
+    padding: 5px 12px;
+    text-align: center;
+    text-shadow: 1px 1px rgba( 0, 0, 0, .8);
+    vertical-align: middle;
+	min-width: 135px;
+	border-radius: 5px;
+	min-height: 30px;
+}
+
+
+

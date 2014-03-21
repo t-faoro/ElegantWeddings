@@ -1,0 +1,144 @@
+<?php 
+//:::: Setting Sessions if Authentication is necessary
+session_start();
+session_unset();
+
+//:::: Error Checking (comment out for live site)
+error_reporting(E_ERROR | E_PARSE );
+//error_reporting(E_ALL);
+
+//:::: File where all necessary include and define actions are performed
+require_once "config.php";
+
+
+//:::: Instantiation of all Classes
+
+$ElegantWeddings = new Layout();
+$MainNav = new Navigation("mainNav", "navigation");
+$AuthNav = new Navigation("authNav", "authNav");
+$FooterNav = new Navigation("footNav", "footerNav" );
+$DB = new Database();
+$Gallery = new SlickGallery("portfolio");
+$Auth = new Authentication();
+//$gallery = new SlickGallery();
+
+
+
+//:::: Instantiate all Content Blocks
+$container = new Content();
+$headerWrapper = new Content();
+$header = new Content();
+$logo = new Content();
+$headerContent = new Content();
+$navigation = new Content();
+$footNav = new Content();
+$footerWrapper = new Content();
+$footer = new Content();
+$contentWrapper = new Content();
+$content = new Content();
+$main = new Content();
+
+
+
+
+
+//:::: Declare ALL Stylesheets Here
+$ElegantWeddings->addCSS("style.css");
+
+//$ElegantWeddings->addCSS("slickGallery.css");
+
+
+
+//:::: Declare ALL Javascript Here
+$ElegantWeddings->addJS("jquery-2.0.1.min.js");
+$ElegantWeddings->addJS("scriptLibrary.js");
+
+
+//:::: Declare all Content Blocks
+$container->newBlock("container");
+$headerWrapper->newBlock("headerWrap");
+$header->newBlock("header");
+$logo->newBlock("logo");
+$headerContent->newBlock("headerContent");
+$navigation->newBlock("nav");
+$footNav->newBlock("footNav");
+$content->newBlock("content");
+$main->newBlock("main");
+$contentWrapper->newBlock("contentWrap");
+$footerWrapper->newBlock("footerWrap");
+$footer->newBlock("footer");
+
+
+
+//:::: Any site block manipulations here.
+
+//:: Build Main Navigation
+
+$navigation->add($MainNav->buildNav());
+$footNav->add($MainNav->buildNav());
+
+
+
+//:: Build Header Content
+$one = 'images/imgOne.jpg';
+$two = 'images/imgTwo.jpg';
+$three = 'images/imgThree.jpg';
+$four = 'images/imgFour.jpg';
+
+$logo->add('<img class="logo" src="'.IMG.'logo.png" />');
+$headerContent->add('<span class="topHeader"><h3>Wedding &amp; Event Planning, Coordination and Consultation</h3></span>');
+//$headerContent->add('<br /><br /><br /><br /><br /><br />');
+$headerContent->add('<span class="bottomHeader"><h3>Serving Lethbridge and Southern Alberta</h3></span>');
+$headerContent->add( rotatingBanner($one, $two, $three, $four) );
+
+
+
+
+
+//:: Page switch - the page=$value are stored here
+include "page/page.switch.php";
+
+
+
+$footer->add( drawFooter() );
+//:::: NO SITE MANIPULATIONS PAST THIS POINT.
+
+//:::: Join Blocks
+
+//:: Inner Content Blocks
+$header->add($logo->buildBlock());
+$header->add($headerContent->buildBlock());
+$headerWrapper->add($header->buildBlock());
+
+$content->add($main->buildBlock());
+$contentWrapper->add($content->buildBlock());
+$contentWrapper->add('<div class="clearfix"></div>');
+$footerWrapper->add($footer->buildBlock());
+
+//::Draw the Site Container
+$container->add($headerWrapper->buildBlock());
+$container->add($navigation->buildBlock());
+$container->add($contentWrapper->buildBlock());
+$container->add($footerWrapper->buildBlock());
+
+
+//:::: Start of Page Declarations
+echo $ElegantWeddings->setPage();
+echo $ElegantWeddings->setHeader(TITLE);
+echo $ElegantWeddings->openBody();
+
+
+//:::: Body Content Goes Here
+
+echo $container->buildBlock();
+
+
+//:::: End of Page Declarations
+
+echo $ElegantWeddings->closeBody();
+echo $ElegantWeddings->endPage();
+
+
+
+//:::: End of Site
+?>

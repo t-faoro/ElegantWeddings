@@ -1,0 +1,203 @@
+@charset "utf-8";
+
+html{
+	font-family: Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, sans-serif;
+	color: white;
+
+	background: url('../../images/metal-diamond-plate.jpg');
+	
+}
+
+body{
+	
+}
+
+h1, h2, h3, h4{
+	text-align: center;
+}
+
+a{
+	color: #FFF;
+	text-decoration: none;
+}
+a:hover{
+	color: #999;
+	
+}
+
+div#adminContainer{
+	height: 100%;
+	width: 100%;
+
+}
+div#adminHeader{
+	display: block;
+	position: relative;
+	margin: 0 auto;
+	margin-top: 50px;
+	width: 960px;
+	bottom: 20px;
+	height: 218px;
+	
+	z-index: 1;
+	opacity: 0.9;
+	border-radius: 10px;
+}
+div#adminLogo{
+	display: block;
+	position: relative;
+	float: left;
+	height: 150px;
+	width: 300px;
+	opacity: 1;
+	border-radius: 10px;
+	margin-right: 10px;
+	
+}
+div#adminHeaderContent{
+	position: relative;
+	top: 10px;
+	float: right;
+	height: 175px;
+	width: 525px;
+	opacity: 1;
+	color: #000;
+	background: #333;
+	border-radius: 10px;
+}
+
+div#adminHeaderContent p{
+	margin-left: 10px;
+	padding: 0;
+	color: #FFF;
+	
+}
+
+div#adminHeaderContent a{
+	margin-left: 10px;
+	color: lime;
+}
+div#adminHeaderContent a:hover{
+	
+	color: #CBCBCB;
+}
+
+div#adminContent{
+	display: block;
+	position: relative;
+	background: url('../../images/energy-flow-background.jpg');
+	opacity: 0.9;
+	background-size: 100% 100%;	
+	margin: 0 auto;
+	width: 960px;
+	min-height: 625px;
+	top: -20px;
+	border: outset 3px #000;
+	z-index: 1;
+	
+}
+div#mainContent{
+	display: block;
+	position: relative;
+	float: right;
+	width: 675px;
+	min-height: 625px;
+	opacity: 1;
+	z-index: 2;
+	
+
+}
+div#sideContent{
+	position: relative;
+	display: block;
+	width: 275px;
+	min-height: 625px;
+	float: left;
+	border-right: 1px solid white;
+	opacity: 1;
+	z-index: 2;
+}
+
+div#sideContent ul{
+	position: relative;
+	list-style: none;
+	z-index: 3;
+	opacity: 1;
+
+	
+}
+
+div#sideContent li{
+	position: relative;
+	left: -20px;
+	border: 1px solid black;
+	padding: 10px;
+	background-color: #333;
+	opacity: 1;
+
+	
+}
+
+div#adminFooter{
+	display: block;
+	position: relative;
+	top: 10px;
+	margin: 0 auto;
+	width: 960px;
+	min-height: 100px;
+	border: solid 1px #F0F;
+	z-index: 1;
+}
+
+div#adminSubNav{
+	position: relative;
+	top: 10px;
+	width: 100%;
+	
+}
+div#adminSubNav ul{
+	position: relative;
+	list-style: none;
+}
+div#adminSubNav li{
+	position: relative;
+	display: inline-block;
+}
+
+.logo{
+	position: relative;
+	display: inherit;
+	border-radius: 10px;
+	height: 175px;
+	width: 350px;
+	top: 10px;
+
+
+	
+	z-index: 2;	
+}
+
+li.selected {
+	background-color: #FFF !important;
+	
+}
+li.selected a{
+	color: #000 !important;
+}
+
+.gold{
+	text-align: left;
+	color: GoldenRod;
+	
+}
+
+.gold:hover {
+	color: #AAA;
+}
+
+.right{
+	float: right;
+	margin-right: 25px;
+}
+
+

@@ -1,0 +1,82 @@
+div#gallery{
+	position: relative;
+	display: inline;
+	margin: 0 auto;
+	margin-top: 50px;
+	width: 500px;
+	height: inherit;
+	padding: 5px;
+}
+
+div#gallery table{
+	height: inherit;
+}
+
+div#gallery th, td, tr{
+	
+	border: solid;
+	border-color: #AAA;
+	border-width: 1px;
+}
+
+div#galleryContainer{
+	margin: 10px 10px 10px 10px;
+	position:inherit;
+	float: left;
+	padding: 25px;
+	border: solid;
+	border-color: #AAA;
+	border-width: 1px;
+	width: 150px;
+	height: 150px;	
+}
+
+.toolbox{
+	margin-top: 10px;
+	position: relative;
+	float: left;
+	display: inline-block;
+	width: auto;
+	height: 50px;
+	border: none;
+}
+
+.toolbox a{
+	padding: 5px;
+}
+
+.noDecoration {
+	border: none;
+}
+
+textarea{
+	width: 275px;
+	height: 150px;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+input[type="text"]{
+	width: 225px;
+}
+
+.albumTitle{
+	text-align: center;
+	height: 40px;
+}
+
+.icon{
+	height: 25px;
+	width: 25px;
+}
+
+.thumbnail{
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: -10px;
+	height: 75px;
+	width: 75px;
+	padding: 5px;
+}
+
+
+

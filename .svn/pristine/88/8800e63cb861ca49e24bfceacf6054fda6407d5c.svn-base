@@ -1,0 +1,146 @@
+<?php 
+session_start();
+
+
+
+//:: This switch will manage page to page management. The case's are in the same order as they appear on the live site.
+switch($_GET['page']){
+		
+		//:: Default is incex.php aka Home
+		default:
+		
+		$main->add('<div id="headerRibbon"><h1 class="ribbon"><span class="ribbon-content">Helping you write your love story.</span></h1></div>');
+		$main->add("<p>Elegant Weddings & Events is an event planning and coordination service committed to providing the people of Southern Alberta, with the assistance they desire for their wedding or planned events. We strive to use our creativity, attention to detail and thrifty nature to aid in the creation of your dream day. By choosing Elegant Weddings & Events, you will have a planner devoted to seeing your vision into a reality.</p>");
+		$main->add('<div id="frontImage"><img src="'. IMG .'frontPage.jpg" /></div>');
+		
+		
+		break;
+	
+	//:: story is Our Story
+	case "story":
+	
+		$main->add('<div id="headerRibbon"><h1 class="ribbon"><span class="ribbon-content">Congratulations on your engagement!</span></h1></div>');
+		$main->add('<img class="selfy" src="'. IMG .'me.png" />');
+	
+	break;
+	
+	//:: Portfolio
+	case "portfolio":
+		$main->add('<div id="headerRibbon"><h1 class="ribbon"><span class="ribbon-content">Portfolio</span></h1></div>');
+		
+	
+	break;
+	
+	case "testimonials":
+		$main->add('<div id="headerRibbon"><h1 class="ribbon"><span class="ribbon-content">Testimonials</span></h1></div>');
+		
+		
+		
+	break;
+	
+	case "packages":
+		$main->add('<div id="headerRibbon"><h1 class="ribbon"><span class="ribbon-content">Packages</span></h1></div>');
+		
+			
+		
+	break;
+	
+	//:: contact-us is Contact us
+	case "contact-us":
+		
+		
+		$main->add('<div id="headerRibbon"><h1 class="ribbon"><span class="ribbon-content">Call Today for a Free Intial Meeting</span></h1></div>');
+			
+	
+	break;
+	
+	
+	
+	//:: This page is for content management, it is unfinished.
+	case "admin":
+		$Auth->checkLogin("test@test.ca", "PASSWORD");
+		
+		switch($_GET['action']){
+			
+			case "login":
+			if($Auth->is_logged_in){
+				
+				header('location: index.php?page=admin&action=manage');
+			}
+			else{
+				$main->add($Auth->drawLogin());
+			}
+			
+			break;
+			
+			case "manage":
+			if($Auth->is_logged_in){
+				$main->add('Welcome to the admin area '.$_SESSION['name'].'<br />');
+				$main->add('You are currently logged in using the username: '.$_SESSION['uName'].'<br />');
+				$main->add('And using ID: '.$_SESSION['id'].'<br />');
+				$main->add('<br /><br />You can use this page to Create, Update, and Delete entries from all pages, just use the navigation at the top to choose the page you want to edit. Please make sure to log out when you are done, and the page will return to normal.');
+				
+			}
+			else{
+				header('location: index.php?page=admin&action=login');				
+			}
+			break;
+			
+			case "manageTestimonial":
+			$Testimonial = new Testimonial(4);
+			$main->add("<h1>Manage Testimonials</h1>");
+			
+			if(isset($_POST['submit'])){
+				$picture = $_POST['picture'];
+				$quote   = $_POST['quote'];
+				$date    = $_POST['date'];
+				
+							
+			
+			$main->add($Testimonial->addTestimonial($picture, $quote, $date) );
+				
+			
+				
+			
+			}
+			else{
+				$main->add($Testimonial->drawAddTestimonalForm());
+			}
+			
+			
+			
+			break;
+		
+		}
+
+			
+			//if($Auth->is_logged_in){
+				//$main->add("Access Granted");
+				
+				
+				
+			//}
+			//else{
+				//$main->add("FORBIDDEN!<br /><br />You do not have permission to view this page.<br />
+							//(If you believe that you have received this message in error, please contact the system administrator.)");
+							
+			//}
+			//break;
+		
+
+		
+	
+	break;
+			
+		
+			
+
+		
+		
+
+}
+
+
+
+
+?>

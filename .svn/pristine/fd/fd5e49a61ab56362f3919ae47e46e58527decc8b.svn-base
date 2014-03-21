@@ -1,0 +1,846 @@
+html{
+	font-size: 100%;
+	font-family: Arial, Helvetica, sans-serif;
+	overflow-x: hidden;
+}
+
+body{
+	background-image: url('../images/background.jpg');
+	background-position: top center;
+	background-repeat: repeat;
+	color: #333;
+}
+
+h1,h2,h3,h4,h5{
+	margin: 0 40px 0 40px;
+	margin-top: 25px;
+	margin-bottom: 25px;
+	font-family: Georgia, serif;
+	color: #5E005E;
+}
+
+p{
+	margin: 0 40px 0 40px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	line-height: 22px;
+	color: #403152;
+	width: auto;
+}
+
+a{
+	text-decoration: none;	
+}
+
+a:hover{
+	color: white;
+	text-decoration: underline;
+}
+
+
+
+/* Containers */
+
+div#container{
+	width: 100%;
+	height: 100%;
+}
+
+div#headerWrap{
+	opacity: 0.75;
+	position: relative;
+	border-radius: 10px;
+	margin: 0 auto;
+	margin-top: 50px;
+	width: 960px;
+	padding-left: 25px;
+	padding-right: 25px;
+	background-color: #F3F6EF;
+	z-index: 1;
+}
+
+div#header{
+	position: relative;
+	margin-right: auto;
+	margin-left: auto;
+	margin-bottom: 25px;
+	width: 960px;
+	height: 200px;
+	z-index: 2;
+}
+
+div#headerContent{
+	position: relative;
+	opacity: 1;
+	float: right;
+	height: 100%;
+	width: 675px;
+	z-index: 3;
+	
+	
+}
+
+div#logo{
+	position: relative;
+	opacity: 1;
+	float: left;
+	height: 100%;
+	width: 260px;
+	z-index: 3;
+}
+
+div#footerWrap{
+	opacity: 0.75;
+	position: relative;
+	border-radius: 10px;
+	margin: 0 auto;
+	margin-top: 25px;
+	width: 960px;
+	padding-left: 25px;
+	padding-right: 25px;
+	background-color: #F3F6EF;
+	z-index: 1;
+}
+
+div#footer{
+	margin: 0 auto;
+	margin-top: 5px;
+	width: 960px;
+	height: 150px;
+	opacity: 1;
+
+}
+
+div#contentWrap{
+	background-image: url('../images/binding_light.png');
+	background-repeat: repeat;
+	border-radius: 10px;
+	padding: 25px;
+	overflow: hidden;
+	margin: 0 auto;
+	width: 960px;
+	min-height: 850px;
+	height: auto;
+
+	background-color: #F3F6EF;
+}
+
+div#content{
+	margin: 0 auto;
+	width: 960px;
+
+}
+
+div#main{
+
+	position: inherit;
+	display: block;
+	float: left;
+	width: 960px;
+
+}
+
+div#side{
+	display: none;
+	float: none;
+	width: 0;
+	
+
+}
+
+div#nav{
+	position: relative;
+	margin: 0 auto;
+	
+	margin-bottom: -40px;
+	top: -40px;
+	height: 75px;
+	width: 960px;
+	z-index: 3;
+		
+}
+
+div#nav ul{
+	margin-left: -20px;
+	margin-right: 20px;
+	list-style-type: none;
+	width: 100%;
+}
+
+div#nav li{
+	float: left;
+}
+
+
+div#nav a{
+	display: block;
+	padding:15px;
+	padding-left: 25px;
+	padding-right: 25px;
+	width: 100px;
+	font-size: 20px;
+	border-left: solid;
+	border-right: solid;
+	border-color: #806380;
+	border-width: 1px;
+	text-decoration: none;
+	text-align: center;
+	color: #FFF;
+	background: -webkit-gradient(linear, left top, left bottom, from(#5E307A), to(#333));
+	background: -moz-linear-gradient(top,  #5E307A,  #333);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#5E307A', endColorstr='#333');
+		
+}
+
+div#nav a:hover{
+
+	background: -webkit-gradient(linear, left top, left bottom, from(#5E307A), to(#999));
+	background: -moz-linear-gradient(top,  #5E307A,  #999);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#5E307A', endColorstr='#999');
+	
+}
+
+div#footerContent{
+	width: 960px;
+	height: 100%;
+	margin: 0 auto;	
+}
+
+div.leftNoMargin{
+	margin: 0;
+	padding: 15px;
+	float: left;
+	border-right: solid;
+	border-color: #000;
+	border-width: 1px;
+	
+}
+
+div.left{
+	border-right: solid;
+	border-color: #000;
+	border-width: 1px;
+	margin-left: 25px;
+	float: left;
+}
+
+
+/* Start of general styling */
+.error{
+	color: red;
+	font-weight: bold;
+}
+
+.success{
+	color: lime;
+	font-weight: bold;
+}
+
+li.selected a{
+	background: -webkit-gradient(linear, left top, left bottom, from(#999), to(#333)) !important;
+	background: -moz-linear-gradient(top,  #999,  #333) !important;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#999', endColorstr='#333') !important;	
+	
+}
+
+.last{
+    -moz-border-radius-topright: 115px;
+    -moz-border-radius-bottomright: 115px;                
+
+    border-top-right-radius: 115px;
+    border-bottom-right-radius: 115px;	
+ 
+}
+
+.first{
+    -moz-border-radius-topleft: 115px;
+    -moz-border-radius-bottomleft: 115px;                
+
+    border-top-left-radius: 115px;
+    border-bottom-left-radius: 115px;	
+ 
+}
+
+.logo{
+	position: absolute;
+	top: -35px;
+	left: -50px;
+	height: 250px;
+	width: 400px;
+}
+
+.wpic{
+	position: relative;
+	top: 65px;
+	left: 45%;
+	margin: 0 auto;
+	
+}
+
+p.wpic {
+	left: 40%;
+	font-weight: bold;
+}
+
+.selfy{
+	margin-left: 40px;
+	margin-right: 10px;
+	float: left;
+	text-wrap:none;
+	border-radius: 25px;
+}
+
+.center{
+	text-align: center;
+}
+
+.contact{
+	position: relative;
+	top: -20px;
+	margin-left: 40px;
+	
+}
+
+p.contact{
+	width: 75%;
+	margin-left: 40px;
+	
+}
+
+.contact a {
+	position: relative;
+	
+	color: #5E005E;
+	
+	font-weight: bold;
+	
+}
+
+.contact a:hover{
+	color: #BA89B6;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+div#contactForm{
+	position: relative;
+	margin-left: 40px;
+	width: 500px;
+	padding: 5px;
+	border: solid 2px #666;
+	border-radius: 15px;
+	background: #CDCDCD;
+	-moz-box-shadow: 2px 5px 5px #666;
+	-webkit-box-shadow: 2px 5px 5px #666;
+	box-shadow: 2px 5px 5px #666;
+	
+}
+
+div#contactForm form{
+	margin-left: 25px;
+	margin-bottom: 25px;
+}
+
+div#contactForm form label{
+	display: block;
+	font-size: 18px;
+	color: #8C538A;
+	
+	
+}
+
+div#contactForm form input[type=text]{
+	min-width: 450px;
+	background-color: #5E5279;
+	border: 3px solid #999; 
+	font-size: 18px;
+	height: 25px;
+	padding-left: 5px;
+	padding-right: 5px;
+	border-radius: 7px;
+	color: #FFF;
+	margin-bottom: 10px;
+}
+
+div#contactForm form textarea{
+	min-width: 450px;
+	min-height: 150px;
+	background-color: #5E5279;
+	border: 3px solid #999; 
+	color: #FFF;
+	font-size: 18px;
+	font-family: Arial, Helvetica, sans-serif;
+	border-radius: 10px;
+	padding: 5px;
+	
+	
+	
+	
+	resize: none;
+}
+
+div#contactForm form input[type=submit]{
+	background-color: #5E5279;
+	border: 3px solid #999; 
+	color: #FFF;
+	height: 35px;
+	width: 75px;
+	cursor: pointer;
+	border-radius: 10px;
+	font-size: 18px;
+	
+}
+
+
+div.errMsg{
+	background-color: #999;
+	color: #FFF;
+	width: 500px;
+	margin-left: 40px;
+	border: solid 2px red;
+	border-radius: 10px;
+	padding: 10px;
+}
+
+div.successMsg{
+	background-color: #999;
+	width: 500px;
+	color: #FFF;
+	margin-left: 40px;
+	border: solid 2px lime;
+	border-radius: 10px;
+	padding: 10px;
+}
+
+.blue{
+	font-weight: bold;
+	color: blue;
+}
+
+.white{
+	color: #000;
+	
+}
+.setMargin{
+	
+	
+	margin-left: 40px;
+}
+
+.header{
+	width: 50px;
+}
+
+.middle{
+	margin-left: 25%;
+}
+
+.bold{
+	font-weight: bold;	
+}
+.underline{
+	text-decoration: underline;
+	
+}
+
+div#headerRibbon{
+	position: relative;
+	z-index: 99;
+	
+}
+
+div#packages{
+	position: relative;
+	z-index: 99;
+	
+}
+
+div#frontImage{
+	margin-top: 25px;
+	margin-left: 25px;
+	margin-right: 25px;
+	border: solid 5px #67407F;
+	border-radius: 5px;
+	padding: 5px;
+	
+}
+
+div#frontImage img{
+	width: 100%; !important;
+	
+}
+
+.clearfix{
+	clear: both;
+}
+
+/*Main Heading Ribbon*/
+.ribbon {
+  font-size: 22px !important;
+  /* This ribbon is based on a 16px font side and a 24px vertical rhythm. I've used em's to position each element for scalability. If you want to use a different font size you may have to play with the position of the ribbon elements */
+  left: 20%;
+  width: 50%;
+  position: relative;
+  background: #643A7D;
+  color: #fff;
+  text-align: center;
+  padding: 1em 2em; /* Adjust to suit */
+  margin: 0 0 3em; /* Based on 24px vertical rhythm. 48px bottom margin - normally 24 but the ribbon 'graphics' take up 24px themselves so we double it. */
+-moz-box-shadow: 0px 5px 5px #666;
+-webkit-box-shadow: 0px 5px 5px #666;
+box-shadow: 0px 5px 5px #666;
+}
+.ribbon:before, .ribbon:after {
+  content: "";
+  position: absolute;
+  display: block;
+  bottom: -1em;
+  border: 1.5em solid #765B87;
+  z-index: -1;
+}
+.ribbon:before {
+  left: -2em;
+  border-right-width: 1.5em;
+  border-left-color: transparent;
+}
+.ribbon:after {
+  right: -2em;
+  border-left-width: 1.5em;
+  border-right-color: transparent;
+}
+.ribbon .ribbon-content:before, .ribbon .ribbon-content:after {
+  content: "";
+  position: absolute;
+  display: block;
+  border-style: solid;
+  border-color: #333 transparent transparent transparent;
+  bottom: -1em;
+  
+}
+.ribbon .ribbon-content:before {
+  left: 0;
+  border-width: 1em 0 0 1em;
+}
+.ribbon .ribbon-content:after {
+  right: 0;
+  border-width: 1em 1em 0 0;
+}
+
+/*SubHeading Ribbon*/
+.subRibbon {
+  font-size: 18px !important;
+  /* This ribbon is based on a 16px font side and a 24px vertical rhythm. I've used em's to position each element for scalability. If you want to use a different font size you may have to play with the position of the ribbon elements */
+  left: 32%;
+  width: 25%;
+  position: relative;
+  background: #333;
+  color: #fff;
+  text-align: center;
+  padding: 1em 2em; /* Adjust to suit */
+  margin: 0 0 3em; /* Based on 24px vertical rhythm. 48px bottom margin - normally 24 but the ribbon 'graphics' take up 24px themselves so we double it. */
+-moz-box-shadow: 0px 5px 5px #666;
+-webkit-box-shadow: 0px 5px 5px #666;
+box-shadow: 0px 5px 5px #666;
+}
+.subRibbon:before, .subRibbon:after {
+  content: "";
+  position: absolute;
+  display: block;
+  bottom: -1em;
+  border: 1.5em solid #666;
+  z-index: -1;
+}
+.subRibbon:before {
+  left: -2em;
+  border-right-width: 1.5em;
+  border-left-color: transparent;
+}
+.subRibbon:after {
+  right: -2em;
+  border-left-width: 1.5em;
+  border-right-color: transparent;
+}
+.subRibbon .subRibbon-content:before, .subRibbon .subRibbon-content:after {
+  content: "";
+  position: absolute;
+  display: block;
+  border-style: solid;
+  border-color: #333 transparent transparent transparent;
+  bottom: -1em;
+  
+}
+.subRibbon .subRibbon-content:before {
+  left: 0;
+  border-width: 1em 0 0 1em;
+}
+.subRibbon .subRibbon-content:after {
+  right: 0;
+  border-width: 1em 1em 0 0;
+}
+
+/*Top Ribbon*/
+.topRibbon {
+  font-size: 16px !important;
+  /* This ribbon is based on a 16px font side and a 24px vertical rhythm. I've used em's to position each element for scalability. If you want to use a different font size you may have to play with the position of the ribbon elements */
+  left: 12%;
+  border-radius: 5px;
+  bottom: 5px;;
+  width: 85%;
+  position: relative;
+  background: #CBCBCB;
+  color: #333;
+  text-align: center;
+  padding: 1em 2em; /* Adjust to suit */
+  margin: 0 0 3em; /* Based on 24px vertical rhythm. 48px bottom margin - normally 24 but the ribbon 'graphics' take up 24px themselves so we double it. */
+-moz-box-shadow: 0px 5px 5px #666;
+-webkit-box-shadow: 0px 5px 5px #666;
+box-shadow: 0px 5px 5px #666;
+}
+ .topRibbon:after {
+  content: "";
+  position: absolute;
+  display: block;
+  bottom: -1em;
+  border: 1.5em solid #666;
+  z-index: -10;
+}
+/*.topRibbon:before {
+  left: -2em;
+  border-right-width: 1.5em;
+  border-left-color: transparent;
+}*/
+.topRibbon:after {
+  right: -2em;
+  border-left-width: 1.5em;
+  border-right-color: transparent;
+
+}
+.topRibbon .topRibbon-content:after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  display: block;
+  border-style: solid;
+  border-color: #333 transparent transparent transparent;
+  bottom: -1em;
+  
+}
+.topRibbon .topRibbon-content:before {
+  left: 0;
+  border-width: 1em 0 0 1em;
+}
+.topRibbon .topRibbon-content:after {
+  right: 0;
+  border-width: 1em 1em 0 0;
+}
+
+/*Login*/
+div#loginContainer{
+	margin-left: auto;
+	margin-right: auto;
+}
+
+div#loginForm{
+	margin: 40px 40px 40px 40px;
+	width: 550px;
+	border: solid 1px blue;
+}
+
+div#loginForm label{
+	margin: 0 40px 0 40px;
+	display: block;
+	width: 150px;
+}
+
+div#loginForm input[type=text], input[type=password]{
+	margin: 0 40px 0 40px;
+	display: block;
+}
+
+div#loginForm input[type=submit]{
+	margin: 0 40px 40px 40px;
+	width: 100px;
+}
+
+div#testimonialLeft{
+	border-radius: 10px;
+	display: block;
+	float: left;
+	background: white;
+	margin-bottom: 50px;
+	position: relative;
+	width: 850px;
+	height: 200px;
+	border: 1px solid black;
+	-moz-box-shadow: 0px 5px 5px #666;
+	-webkit-box-shadow: 0px 5px 5px #666;
+	box-shadow: 0px 5px 5px #666;
+}
+
+div#testimonialLeft p{
+	margin: 0 auto;
+	margin-top: 25px;
+	font-family:Georgia, "Times New Roman", Times, serif;
+	font-weight: bold;
+	font-style: italic;
+	font-size: 20px;
+	
+}
+
+div.testiPicLeft{
+	display: block;
+	position: relative;
+	left: 5px;
+	top: 12px;
+	float: left;
+	height: 90%;
+	width: 23%;
+	padding-right: 15px;
+}
+
+div.testiPicLeft img{
+	border-radius: 10px;
+	height: 100%;
+	width: 110%;
+	-moz-box-shadow: 0px 5px 5px #666;
+	-webkit-box-shadow: 0px 5px 5px #666;
+	box-shadow: 0px 5px 5px #666;
+}
+
+
+div.quoteDateLeft{
+	padding: 5px;
+	border-radius: 10px;
+	border: 1px solid black;
+	background: #CDCDCD;
+	display: block;
+	top: 10px;
+	position: relative;
+	left: -10px;
+	float: right;
+	width: 70%;
+	height: 60%;
+	-moz-box-shadow: 0px 5px 5px #666;
+	-webkit-box-shadow: 0px 5px 5px #666;
+	box-shadow: 0px 5px 5px #666;
+}
+
+div.dateLeft{
+	display: block;
+	position: relative;
+	top: 10px;
+	height: 24%;
+	width: 70%;
+	float: right;
+}
+
+div#testimonialRight{
+	border: 1px solid black;
+	border-radius: 10px;
+	background: white;
+	display: block;
+	float: right;
+	margin-bottom: 50px;	
+	position: relative;
+	width: 850px;
+	height: 200px;
+	-moz-box-shadow: 0px 5px 5px #666;
+	-webkit-box-shadow: 0px 5px 5px #666;
+	box-shadow: 0px 5px 5px #666;
+}
+
+div.testiPicRight{
+	display: block;
+	position: relative;
+	right: 10px;
+	top: 12px;
+	float: right;
+	height: 90%;
+	width: 23%;
+	padding-right: 15px;
+}
+
+div.testiPicRight img{
+	border-radius: 10px;
+	height: 100%;
+	width: 110%;
+	-moz-box-shadow: 0px 5px 5px #666;
+	-webkit-box-shadow: 0px 5px 5px #666;
+	box-shadow: 0px 5px 5px #666;
+}
+
+
+div.quoteDateRight{
+	border: solid 1px black;
+	padding: 5px;
+	display: block;
+	position: relative;
+	border-radius: 10px;
+	top: 10px;
+	right: -10px;
+	background: #CDCDCD;
+	float: left;
+	width: 70%;
+	height: 60%;
+	-moz-box-shadow: 0px 5px 5px #666;
+	-webkit-box-shadow: 0px 5px 5px #666;
+	box-shadow: 0px 5px 5px #666;
+}
+
+div.dateRight{
+	margin-left: 35px;
+	display: block;
+	position: relative;
+	top: 10px;
+	height: 24%;
+	width: 70%;
+	float: left;	
+
+}
+
+div#testimonialRight p{
+	margin: 0 auto;
+	margin-top: 25px;
+	font-family:Georgia, "Times New Roman", Times, serif;
+	font-weight: bold;
+	font-style: italic;
+	font-size: 20px;
+}
+
+div.packageBody{
+	margin: 0 auto;
+	position: relative;
+	z-index: 2;
+	top: -20px;
+	width: 75%;
+	background: #FFF;
+	border: 3px solid black;
+	border-radius: 20px;
+	opacity: 0.6;
+	-moz-box-shadow: 0px 5px 5px #666;
+	-webkit-box-shadow: 0px 5px 5px #666;
+	box-shadow: 0px 5px 5px #666;
+}
+
+div.packageBody ul{
+	opacity: 1;
+}
+
+div.packageHeader{
+	position: relative;
+	bottom: -25px;
+	z-index: 1;
+	
+}
+
+div.packageList{
+	opacity: 1;
+	font-weight: bold;
+	color: #000;
+	
+}
+
+div.packageList li{
+	padding: 10px;
+}
+

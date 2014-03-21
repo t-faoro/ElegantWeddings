@@ -1,0 +1,104 @@
+/*/* CSS Document */
+/*li{
+	list-style: none;
+	display: inline-block;
+}*/
+
+
+a.gallery img{
+/*	max-width: 250px;
+	max-height: 250px;
+	margin-right: 10px;
+	margin-left: 10px;
+	margin-top: 7px;*/
+	/*border-radius: 50px;*/
+	
+}
+
+div.galBlock{
+	margin-bottom: 50px;
+}
+
+img.thumb{
+/*	box-shadow: 1px 5px 40px #000;
+	border-radius: 10px;*/
+}
+
+div.gallery-carousel{
+	width: 85%;
+	position: relative;
+	bottom: 40px;
+	clear: left;
+	
+	margin: 0 auto;
+	background: -webkit-gradient(linear, left top, left bottom, from(#333), to(#FFF));
+	background: -moz-linear-gradient(top, #333, #FFF);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#333', endColorstr='#FFF');
+	background: -ms-linear-gradient(top, #333, #FFF);
+	border-radius: 20px;
+	padding: 0;
+	z-index: 1;
+	min-height: 205px;
+	padding-left: 10px;
+	padding-right: 10px;
+	margin-bottom: 50px;
+	box-shadow: 0px 7px 50px #000;
+}
+
+span.left-arrow{
+	position: relative;
+	pointer-events: none;
+	float: left;
+	content: "<<";
+	color: lime;
+	width: 50px;
+	height: 205px;
+	top: -40px;
+	left: 23px;
+	opacity: 0.9;
+	background: #333;
+	z-index: 2;
+}
+
+span.left-arrow img.galPrev{
+	display: block;
+	position: relative;
+	top: 75px;
+	right: 10px;
+}
+
+span.left-arrow :hover{
+	display:block;
+	box-shadow: 5px 5px 5px lime;
+	background: lime;
+}
+
+span.right-arrow{
+	color: lime;
+	pointer-events: none;
+	position: relative;
+	float: right;
+	content: ">>";
+	bottom: 450px;
+	right: 22px;
+	width: 50px;
+	height: 206px;
+	opacity: 0.9;
+	background: #333;
+	z-index: 2;
+}
+
+span.right-arrow img.galNext{
+	position: relative;
+	top: 75px;
+	left: 10px;	
+}
+
+
+h2.gallery-title{
+	margin: 0;
+	padding: 0;
+	margin-left: 87px;
+	color: lime;
+	font-weight: bold;
+}*/

@@ -1,0 +1,307 @@
+<?php 
+session_start();
+
+
+
+//:: This switch will manage page to page management. The case's are in the same order as they appear on the live site.
+switch($_GET['page']){
+		
+		//:: Default is incex.php aka Home
+		default:
+		
+		$main->add('<div id="headerRibbon"><h1 class="ribbon"><span class="ribbon-content">Helping you write your love story.</span></h1></div>');
+		$main->add("<p>Elegant Weddings & Events is an event planning and coordination service committed to providing the people of Southern Alberta, with the assistance they desire for their wedding or planned events. We strive to use our creativity, attention to detail and thrifty nature to aid in the creation of your dream day. By choosing Elegant Weddings & Events, you will have a planner devoted to seeing your vision into a reality.</p>");
+		$main->add('<div id="frontImage"><img src="'. IMG .'frontPage.jpg" /></div>');
+		
+		
+		break;
+	
+	//:: story is Our Story
+	case "story":
+	
+		$main->add('<div id="headerRibbon"><h1 class="ribbon"><span class="ribbon-content">Congratulations on your engagement!</span></h1></div>');
+		$main->add('<img class="selfy" src="'. IMG .'me.png" />');
+		
+		$main->add("<p>Please allow me to introduce myself, my name is Andrea. I have lived in Southern Alberta my entire life and I settled in Lethbridge ten years ago. I have had a life long interest in weddings and events, and it has always been my dream to own my own business. After graduating from the Business Administration program at Lethbridge College, I decided to further develop my interest in the wedding industry and pursue my dream. Recently, I received my certification through the Wedding Planners Institute of Canada. I work with trusted friends and other certified wedding planners to make sure coordination of all wedding and event details go smoothly. Over the past two years, it has been my privilege to have worked with several couples to help make their dream day a reality. Contact me today for your own no obligation, initial meeting to discuss how I can help with your day.</p>");
+		
+		$main->add("<h3>What makes me Different</h3>");
+		$main->add("<p>My number one priority as your coordinator, is that you enjoy the time you spend as an engaged couple. I want to make this experience as stress-free as possible for you. I want your wedding to be a representation of you, and will work with you to make that happen. As a certified wedding coordinator I take my position seriously. Striving to keep in touch with the latest trends and networking with other people in the industry, including other planners. You can trust that I will always act in an ethical way and have your best interests at heart.</p>");
+		
+		
+		$main->add('<a target="_blank" href="http://wpic.ca/"><img class="wpic" src="' . IMG . 'seal_lowres.png" /></a>');
+		$main->add('<p class="wpic">WPIC Code of Ethics</p>');	
+	
+	break;
+	
+	//:: Portfolio
+	case "portfolio":
+		$main->add('<div id="headerRibbon"><h1 class="ribbon"><span class="ribbon-content">Portfolio</span></h1></div>');
+		
+		
+		switch($_GET['action']){
+			default:
+			$main->add($Gallery->getAlbums());
+			break;
+			
+			case "viewAlbum":
+			$main->add("BAM");
+			$dir = SG_DIR.'portiOne';
+			//$tester = scandir($dir);
+			
+			//print_r($tester);
+			break;
+		}
+		
+		
+	break;
+	
+	case "testimonials":
+		$main->add('<div id="headerRibbon"><h1 class="ribbon"><span class="ribbon-content">Testimonials</span></h1></div>');
+		
+		//:: Katie
+		$main->add('<div id="testimonialLeft">');
+		$main->add('<div class="testiPicLeft">');
+		$main->add('<img src="'.IMG.'katie.jpg" /> ');
+		$main->add('</div>');
+		$main->add('<div class="quoteDateLeft">');
+		$main->add('<p>" '."I would recommend Andrea to any of my friends if you're looking for someone who can manage your budget, your planning and your sanity".' "</p>');
+		$main->add('</div>');
+		$main->add('<div class="dateLeft"><p>-Katie married August 4, 2012</p></div>');		
+		$main->add('</div>');
+		
+		//:: Cynthia
+		$main->add('<div id="testimonialRight">');
+		$main->add('<div class="testiPicRight">');
+		$main->add('<img src="'.IMG.'cynthia.jpg" />');
+		$main->add('</div>');
+		$main->add('<div class="quoteDateRight">');
+		$main->add('<p>" '."I don't know how to express how much it meant to have your guidance during this crazy and wonderful time. You really made it all happen".' "</p>');
+		$main->add('</div>');
+		$main->add('<div class="dateRight"><p> -Cynthia married August 19, 2012</p></div>');		
+		$main->add('</div>');
+		
+		$main->add('<div id="testimonialLeft">');
+		$main->add('<div class="testiPicLeft wideImg">');
+		$main->add('<img src="'.IMG.'lindsay.jpg" /> ');
+		$main->add('</div>');
+		$main->add('<div class="quoteDateLeft">');
+		$main->add('<p>" '."Every single one of my wedding ideas became reality. She knew my vision for my wedding and ensured that I had everything I dreamt of. Having Andrea was invaluable".' "</p>');
+		$main->add('</div>');
+		$main->add('<div class="dateLeft"><p>-Lindsay married August 25, 2012 </p></div>');		
+		$main->add('</div>');
+		
+	break;
+	
+	case "packages":
+		$main->add('<div id="headerRibbon"><h1 class="ribbon"><span class="ribbon-content">Packages</span></h1></div>');
+		
+		$main->add('<div id="packages">');
+		
+		$main->add('<div class="packageHeader"><h1 class="subRibbon"><span class="subRibbon-content">The Ultimate</span></h1></div>');
+		$main->add('<div class="packageBody">');
+		$main->add('<div class="packageList" >');
+		$main->add('<ul>');
+		$main->add('<li>Assistance with the planning every detail of your wedding. Including budget, design, theme, decor, venue selection, seating/floor plans, entertainment and anything else you want to include in your big day</li>');
+		$main->add('<li>Time management of planning schedule through detailed checklists and a personalized wedding day schedule </li>');
+		$main->add('<li>Organize and arrange meetings with any vendors and arrange for all contracts</li>');
+		$main->add('<li> Unlimited contact with planner through phone or email to discuss your wedding plan​</li>');
+		$main->add('<li>Coordination on day of by lead and assistant coordinator to ensure your vision is achieved. Each coordinator is equipped with day of emergency kit.</li>');
+		$main->add('</ul>');
+		$main->add('</div>');
+		$main->add('</div>');
+		
+		$main->add('<div class="packageHeader"><h1 class="subRibbon"><span class="subRibbon-content">See it up To</span></h1></div>');
+		$main->add('<div class="packageBody">');
+		$main->add('<div class="packageList" >');
+		$main->add('<ul>');
+		$main->add('<li>Assistance with the planning every detail of your wedding. Including budget, design, theme, decor, venue selection, seating/floor plans, entertainment and anything else you want to include in your big day</li>');
+		$main->add('<li>Time management of planning schedule through detailed checklists and a personalized wedding day schedule </li>');
+		$main->add('<li>Organize and arrange meetings with any vendors and arrange for contracts</li>');
+		$main->add('<li>Unlimited contact with planner through phone or email to discuss your wedding plan​</li>');
+		$main->add('</ul>');
+		$main->add('</div>');
+		$main->add('</div>');
+		
+		$main->add('<div class="packageHeader"><h1 class="subRibbon"><span class="subRibbon-content">See it Through</span></h1></div>');
+		$main->add('<div class="packageBody">');
+		$main->add('<div class="packageList" >');
+		$main->add('<ul>');
+		$main->add('<li>Consultations at one month and two week prior to discuss contracted vendors and wedding details</li>');
+		$main->add('<li>Create customized checklists and help with errands</li>');
+		$main->add('<li>Coordination on day of by lead and assistant coordinator to ensure your vision is achieved. Each coordinator is equipped with day of emergency kit</li>');
+		$main->add('</ul>');
+		$main->add('</div>');
+		$main->add('</div>');
+		
+		$main->add('<div class="packageHeader"><h1 class="subRibbon"><span class="subRibbon-content">A la Carte</span></h1></div>');
+		$main->add('<div class="packageBody">');
+		$main->add('<div class="packageList" >');
+		$main->add('<ul>');
+		$main->add('<li>Hourly consultations for help with weddings, corporate events, showers, reunions or other celebrations.​</li>');
+		$main->add('<li> Specialty table design and setups (Sweet tables, Hot Chocolate bar, Photo Booths and endless other possibilities available)​</li>');
+		$main->add('</ul>');
+		$main->add('</div>');
+		$main->add('</div>');
+		
+		$main->add('</div>');
+		
+		
+	break;
+	
+	//:: contact-us is Contact us
+	case "contact-us":
+		
+		
+		$main->add('<div id="headerRibbon"><h1 class="ribbon"><span class="ribbon-content">Call Today for a Free Intial Meeting</span></h1></div>');
+		$main->add('<h4 class="center">Appointments are available at your convenience.</h4>');
+		$main->add('<h3 class="underline">Phone:</h3>');
+		$main->add('<span class="contact bold">403.715.8077</span>');
+		$main->add("<br />");
+		
+		$main->add('<h3 class="underline">E-Mail:</h3>');
+		$main->add('<span class="contact bold" ><a href="mailto:andrea@elegantweddingsevents.com">andrea@elegantweddingsevents.com</a></span>');
+		$main->add("<br />");
+		
+		$main->add('<h3 class="underline">Contact Form</h3>');
+		$main->add('<p class="contact">If one of the above methods is not convenient, please feel free to fill out this form and we will contact you in a timely manor.</p><br />');
+		$main->add('<a name="contactForm"></a>');
+		if(isset($_POST['submit'])){
+			date_default_timezone_set('America/Edmonton');
+			
+			$pattern  = '/.*@.*\..*/';
+			$name     = $_POST['name'];
+			$email    = $_POST['email'];
+			$subject  = $_POST['subject'];
+			$comments = $_POST['comments'];
+			$date 	  = date("F j, Y, g:i a");
+			
+			if(strlen($name) <= 0){
+				$main->add('<div class="errMsg"><span class="error">Error: </span>Name was left blank. No fields can be left blank.</div><br />');
+				$main->add(contactForm($name, $email, $subject, $comments));
+			}
+			elseif(strlen($email) <= 0){
+				$main->add('<div class="errMsg"><span class="error">Error: </span>E-Mail was left blank. No fields can be left blank.</div><br />');
+				$main->add(contactForm($name, $email, $subject, $comments));
+							
+			}
+			elseif(!preg_match($pattern, $email) > 0){
+				$main->add('<div class="errMsg"><span class="error">Error: </span>E-Mail was not correct format. (email@domain.com) </div><br />');
+				$main->add(contactForm($name, $email, $subject, $comments));
+			}			
+			elseif(strlen($subject) <= 0){
+				$main->add('<div class="errMsg"><span class="error">Error: </span>Subject was left blank. No fields can be left blank.</div><br />');
+				$main->add(contactForm($name, $email, $subject, $comments));			
+			}
+
+			elseif(strlen($comments) <= 0){
+				$main->add('<div class="errMsg"><span class="error">Error: </span>Comments were left blank. No fields can be left blank.</div><br />');
+				$main->add(contactForm($name, $email, $subject, $comments));			
+			}
+			else{
+				sendMail($name, $email, $subject, $comments, $date);
+				$main->add('<div class="successMsg"><span class="success">Success: </span>Contact form submitted successfully.</div><br />');
+				$main->add('<p>Thank you! we will contact you as soon as possible.</p>');
+				$main->add(contactForm());
+			}
+				
+				
+			
+			
+			
+		}
+		else{
+			$main->add(contactForm());
+		}
+		
+		
+	
+	break;
+	
+	//:: This page is for content management, it is unfinished.
+	case "admin":
+		$Auth->checkLogin("test@test.ca", "PASSWORD");
+		
+		switch($_GET['action']){
+			
+			case "login":
+			if($Auth->is_logged_in){
+				
+				header('location: index.php?page=admin&action=manage');
+			}
+			else{
+				$main->add($Auth->drawLogin());
+			}
+			
+			break;
+			
+			case "manage":
+			if($Auth->is_logged_in){
+				$main->add('Welcome to the admin area '.$_SESSION['name'].'<br />');
+				$main->add('You are currently logged in using the username: '.$_SESSION['uName'].'<br />');
+				$main->add('And using ID: '.$_SESSION['id'].'<br />');
+				$main->add('<br /><br />You can use this page to Create, Update, and Delete entries from all pages, just use the navigation at the top to choose the page you want to edit. Please make sure to log out when you are done, and the page will return to normal.');
+				
+			}
+			else{
+				header('location: index.php?page=admin&action=login');				
+			}
+			break;
+			
+			case "manageTestimonial":
+			$Testimonial = new Testimonial(4);
+			$main->add("<h1>Manage Testimonials</h1>");
+			
+			if(isset($_POST['submit'])){
+				$picture = $_POST['picture'];
+				$quote   = $_POST['quote'];
+				$date    = $_POST['date'];
+				
+							
+			
+			$main->add($Testimonial->addTestimonial($picture, $quote, $date) );
+				
+			
+				
+			
+			}
+			else{
+				$main->add($Testimonial->drawAddTestimonalForm());
+			}
+			
+			
+			
+			break;
+		
+		}
+
+			
+			//if($Auth->is_logged_in){
+				//$main->add("Access Granted");
+				
+				
+				
+			//}
+			//else{
+				//$main->add("FORBIDDEN!<br /><br />You do not have permission to view this page.<br />
+							//(If you believe that you have received this message in error, please contact the system administrator.)");
+							
+			//}
+			//break;
+		
+
+		
+	
+	break;
+			
+		
+			
+
+		
+		
+
+}
+
+
+
+
+?>

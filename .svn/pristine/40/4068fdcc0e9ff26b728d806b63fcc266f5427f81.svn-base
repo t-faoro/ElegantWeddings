@@ -1,0 +1,66 @@
+<?php 
+
+function contactForm($name = null, $email = null, $subject = null, $comments = null){
+	
+	$markUp  = '<div id="contactForm">';
+	$markUp .= '<form method="POST" action="index.php?page=contact-us#contactForm">';
+	$markUp .= '<label class="bold"  for="name">Name: </label>';
+	$markUp .= '<input type="text" name="name" value="'.$name.'" />';
+	$markUp .= '<br /><br />';
+	$markUp .= '<label class="bold"  for="email">E-Mail: </label>';
+	$markUp .= '<input type="text" name="email" value="'.$email.'" />';
+	$markUp .= '<br />';
+	$markUp .= '<label class="bold"  for="subject">Subject</label>';
+	$markUp .= '<input type="text" name="subject" value="'.$subject.'" />';
+	$markUp .= '<br /><br />';
+	$markUp .= '<label class="bold" for="comments">Comments: </label>';
+	$markUp .= '<textarea name="comments" >';
+	$markUp .= $comments;
+	$markUp .= '</textarea>';
+	$markUp .= '<br />';
+	$markUp .= '<br />';
+	$markUp .= '<input type="submit" name="submit" value="Send" />';	
+
+	$markUp .= '</form>';
+	$markUp .= '</div>';
+	
+	return $markUp;	
+}
+
+function sendMail($name, $email, $subject, $comments, $date){
+	$to = "t.d.g.faoro@gmail.com";
+	$fromName = $name;
+	$fromEmail = $email;
+	$mailSubject = $subject;
+	$body = $comments;
+	$dateTime = $date;
+	$headers = "From: contact@elegantweddingsevents.com"; 
+	
+	$email  = 'Message sent on '.$dateTime;
+	$email .= '<br /><br />';
+	
+	$email .= 'TO: '.$to;
+	$email .= '\n\n';
+	$email .= 'FROM NAME: '.$fromName;
+	$email .= '<br /><br />';
+	$email .= 'FROM EMAIL: '.$fromEmail;
+	$email .= '<br /><br />';
+	$email .= 'SUBJECT: '.$mailSubject;
+	$email .= '<br /><br /><br />';
+	$email .= 'BODY: '.'<br />';
+	$email .= $body;
+	$email .= '<br /><br /><br />';
+	$email .= 'Please do not respond to this e-mail, no response will be given.';
+	
+	
+	mail($to, $mailSubject, $email, $headers);
+
+	
+}
+
+function procUpload(){
+
+}
+
+
+?>

@@ -1,0 +1,121 @@
+/* CSS Document */
+li{
+	list-style: none;
+	display: inline-block;
+}
+
+
+a.gallery img{
+	max-width: 250px;
+	max-height: 250px;
+	margin-right: 10px;
+	margin-left: 10px;
+	margin-top: 7px;
+	
+}
+
+img.thumb{
+	box-shadow: 1px 5px 40px #000;
+	border-radius: 10px;
+}
+
+div#gallery-carousel{
+	width: 85%;
+	position: relative;
+	bottom: 190px;
+	clear: left;
+	margin: 0 auto;
+	background: #FAF0E6;
+	padding: 0;
+	z-index: 1;
+	min-height: 205px;
+	padding-left: 10px;
+	padding-right: 10px;
+	box-shadow: 0px 7px 50px #000;
+}
+
+span.left-arrow{
+	position: relative;
+	pointer-events:none;
+	float: left;
+	content: "<<";
+	color:lime;
+	width: 50px;
+	height: 205px;
+	top: 15px;
+	left: 90px;
+	opacity: 0.9;
+	background: #333;
+	z-index: 2;
+}
+
+span.left-arrow img.galPrev{
+	display: block;
+	position: relative;
+	top: 75px;
+	right: 10px;
+}
+
+span.left-arrow :hover{
+	display:block;
+	box-shadow: 5px 5px 5px lime;
+	background: lime;
+}
+
+span.right-arrow{
+	color: lime;
+	pointer-events:none;
+	position: relative;
+	float: right;
+	content: ">>";
+	bottom: 395px;
+	right: 90px;
+	width: 50px;
+	height: 205px;
+	opacity: 0.9;
+	background: #333;
+	z-index: 2;
+}
+
+span.right-arrow img.galNext{
+	position: relative;
+	top: 75px;
+	left: 10px;	
+}
+
+
+h2.gallery-title{
+	margin: 0;
+	padding: 0;
+	margin-left: 87px;
+	color: lime;
+	font-weight: bold;
+}
+
+table tbody tr td{
+	border: 1px solid #FFF;
+	padding: 10px;
+}
+
+span.error{
+	position: relative;
+	top: 25px;
+	color: #FFF;
+}
+
+form#uploadForm{
+	display: block;
+	margin-left: 5%;
+	margin-right: 5%;
+	padding: 10px;
+}
+.galName{
+	display: none;
+}
+
+form#uploadForm label{
+	display: block;
+}
+form#uploadForm input{
+	display: block;
+}

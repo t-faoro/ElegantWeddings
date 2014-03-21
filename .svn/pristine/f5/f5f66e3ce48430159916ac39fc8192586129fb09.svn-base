@@ -1,0 +1,62 @@
+$(document).ready(function() {
+	
+	
+   $("#content").css("display", "none");
+ 
+    $("#content").fadeIn(1000);
+ 
+    $("a").click(function(event){
+        event.preventDefault();
+        linkLocation = this.href;
+        $("#content").fadeOut(500, redirectPage);      
+    });
+         
+    function redirectPage() {
+        window.location = linkLocation;
+    }
+
+
+$(window).load(function() { //start after HTML, images have loaded
+ 
+    var InfiniteRotator =
+    {
+        init: function()
+        {
+            //initial fade-in time (in milliseconds)
+            var initialFadeIn = 1000;
+ 
+            //interval between items (in milliseconds)
+            var itemInterval = 5000;
+ 
+            //cross-fade time (in milliseconds)
+            var fadeTime = 2500;
+ 
+            //count number of items
+            var numberOfItems = $('.bannerItem').length;
+ 
+            //set current item
+            var currentItem = 0;
+ 
+            //show first item
+            $('.bannerItem').eq(currentItem).fadeIn(initialFadeIn);
+ 
+            //loop through the items
+            var infiniteLoop = setInterval(function(){
+                $('.bannerItem').eq(currentItem).fadeOut(fadeTime);
+ 
+                if(currentItem == numberOfItems -1){
+                    currentItem = 0;
+                }else{
+                    currentItem++;
+                }
+                $('.bannerItem').eq(currentItem).fadeIn(fadeTime);
+ 
+            }, itemInterval);
+        }
+    };
+ 
+    InfiniteRotator.init();
+ 
+});
+
+});

@@ -1,0 +1,154 @@
+/* CSS Document */
+
+div.testimonialStage{
+	margin: 0 auto;
+	display: block;
+	position: relative;
+	width: 100%;
+	min-height: 335px;
+	
+}
+
+div.testimBlock{
+	width: 85%;
+	display: block;
+	position: relative;
+	height: auto;
+	margin: 0 auto;
+	max-width: 960px;
+	background: #FFF;
+	box-shadow: 0px 5px 15px #666;
+}
+
+div.testimonialImgLeftFloat{
+	float: left;
+	width: 42%;
+	height: auto;
+}
+
+div.testimonialImgLeftFloat img{
+	width: 250px;
+	height: 250px;
+	margin-left: 50px;
+	border: 3px solid #FFF;
+	box-shadow: 0px 5px 15px #666;
+}
+
+div.testimonialTextLeftFloat{
+	max-width: 98%;
+	width: 350px;
+	padding: 1%;
+	padding-left: 15px;
+	background: #F6F6F6;
+	float: left;
+	min-height: 175px;
+	border-radius: 5px;
+	box-shadow: 0px 5px 15px #666;
+	
+	
+}
+
+div.testimonialImgRightFloat{
+	float: right;
+	width: 42%;
+	height: auto;
+}
+
+div.testimonialImgRightFloat img{
+	width: 250px;
+	height: 250px;
+	margin-left: 50px;
+	border: 3px solid #FFF;
+	box-shadow: 0px 5px 15px #666;
+}
+
+div.testimonialTextRightFloat{
+	max-width: 98%;
+	width: 350px;
+	padding: 1%;
+	padding-left: 15px;
+	background: #F6F6F6;
+	float: right;
+	min-height: 175px;
+	border-radius: 5px;
+	box-shadow: 0px 5px 15px #666;
+	
+	
+}
+
+span.testimonial{
+	margin: 0px;
+	font-size: 1.25em;
+}
+
+div.clientName{
+	float: left;
+	
+}
+
+div.clientNameRight{
+	float: right;
+}
+
+.noPadd{
+	padding: 0;	
+	margin-top: 25px;
+	margin-left: 20px;
+	margin-bottom: 0;
+}
+
+div.testimonialTextLeftFloat:before {
+	position: absolute;
+	display: inline-block;
+	border-top: 10px solid transparent;
+	border-right: 10px solid #C5C5BD;
+	border-bottom: 10px solid transparent;
+	border-right-color: rgba(0, 0, 0, 0.2);
+	left: 331px;
+	top: 30px;
+	content: '';
+}
+
+div.testimonialTextLeftFloat:after {
+	position: absolute;
+	display: inline-block;
+	border-top: 9px solid transparent;
+	border-right: 9px solid #F6F6F6;
+	border-bottom: 9px solid transparent;
+	left: 333px;
+	top: 31px;
+	content: '';
+}
+
+div.testimonialTextRightFloat:before {
+	transform:rotate(180deg);
+	-ms-transform:rotate(180deg); /* IE 9 */
+	-webkit-transform:rotate(180deg); /* Safari and Chrome */
+	position: absolute;
+	display: inline-block;
+	border-top: 10px solid transparent;
+	border-right: 10px solid #C5C5BD;
+	border-bottom: 10px solid transparent;
+	border-right-color: rgba(0, 0, 0, 0.2);
+	left: 473px;
+	top: 30px;
+	content: '';
+}
+
+div.testimonialTextRightFloat:after {
+	transform:rotate(180deg);
+	-ms-transform:rotate(180deg); /* IE 9 */
+	-webkit-transform:rotate(180deg); /* Safari and Chrome */
+	position: absolute;
+	display: inline-block;
+	border-top: 9px solid transparent;
+	border-right: 9px solid #F6F6F6;
+	border-bottom: 9px solid transparent;
+	left: 472px;
+	top: 31px;
+	content: '';
+}
+
+div.testimBlock .leftIMG{
+
+}

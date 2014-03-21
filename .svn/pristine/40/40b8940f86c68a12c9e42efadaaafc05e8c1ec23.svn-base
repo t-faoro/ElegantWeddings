@@ -1,0 +1,118 @@
+<?php 
+
+function contactForm($name = null, $email = null, $subject = null, $comments = null){
+	
+	$markUp  = '<div id="contactForm">';
+	$markUp .= '<span class="note">(Note: All fields are requred.)</span>';
+	$markUp .= '<form method="POST" action="index.php?page=contact-us#contactForm">';
+	$markUp .= '<label class="bold"  for="name">Name: </label>';
+	$markUp .= '<input type="text" name="name" value="'.$name.'" />';
+	$markUp .= '<br /><br />';
+	$markUp .= '<label class="bold"  for="email">E-Mail: </label>';
+	$markUp .= '<input type="text" name="email" value="'.$email.'" />';
+	$markUp .= '<br />';
+	$markUp .= '<label class="bold"  for="subject">Subject</label>';
+	$markUp .= '<input type="text" name="subject" value="'.$subject.'" />';
+	$markUp .= '<br /><br />';
+	$markUp .= '<span class="commentContainer"><label id="commentLabel" class="bold" for="comments">Comments: </label>';
+	$markUp .= '<textarea name="comments" >';
+	$markUp .= $comments;
+	$markUp .= '</textarea></span>';
+	$markUp .= '<br />';
+	$markUp .= '<br />';
+	$markUp .= '<input type="submit" name="submit" value="Send" />';	
+
+	$markUp .= '</form>';
+	$markUp .= '</div>';
+	
+	return $markUp;	
+}
+
+function sendMail($name, $email, $subject, $comments, $date){
+	$to = "t.d.g.faoro@gmail.com";
+	$fromName = $name;
+	$fromEmail = $email;
+	$mailSubject = $subject;
+	$body = $comments;
+	$dateTime = $date;
+	$headers = "From: contact@elegantweddingsevents.com"; 
+	
+	$email  = 'Message sent on '.$dateTime;
+	$email .= '<br /><br />';
+	
+	$email .= 'TO: '.$to;
+	$email .= '\n\n';
+	$email .= 'FROM NAME: '.$fromName;
+	$email .= '<br /><br />';
+	$email .= 'FROM EMAIL: '.$fromEmail;
+	$email .= '<br /><br />';
+	$email .= 'SUBJECT: '.$mailSubject;
+	$email .= '<br /><br /><br />';
+	$email .= 'BODY: '.'<br />';
+	$email .= $body;
+	$email .= '<br /><br /><br />';
+	$email .= 'Please do not respond to this e-mail, no response will be given.';
+	
+	
+	mail($to, $mailSubject, $email, $headers);
+
+	
+}
+
+function procUpload(){
+
+}
+
+function drawFooter(){
+
+	
+	$markUp  = '<div id="footerStage">';
+	
+	$markUp .= '<div class="footerLeft">';
+	$markUp .= '<span class="smallLogo"><img src="images/EW_logo_small.png" /></span>';
+	$markUp .= '<span class="desc">Elegant Weddings &amp; Events <br /> Copyright &#169; 2013 </span>';
+	$markUp .= '</div>';
+	$markUp .= '<div class="footerRight">';
+	$markUp .= '<h4>Connect with us!</h4>';
+	$markUp .= '<span class="icon"><a href="https://www.facebook.com/pages/Elegant-Weddings-Events-Lethbridge-AB/269696773073638?ref=hl" target="_blank"><img src="images/facebook.png" /></a></span>';
+	$markUp .= '<span class="icon"><a href="https://twitter.com/EWAELethbridge" target="_blank"><img src="images/twitter.png" /></a></span>';
+	$markUp .= '<span class="icon"><a href="http://www.linkedin.com/profile/view?id=151370323&locale=en_US&trk=tyah&trkInfo=tas%3AAndrea%2Cidx%3A1-1-1" target="_blank"><img src="images/linkedin.png" /></a></span>';
+	$markUp .= '<span class="icon"><a href="http://www.weddingwire.com/biz/elegant-weddings-events-lethbridge-ab-lethbridge/ea29637ba0e46a1c.html" target="_blank"><img src="images/weddingWire.png" /></a></span>';
+	$markUp .= '<span class="icon"><a href="mailto:andrea@elegantweddingsevents.com"><img src="images/email.png" /></a></span>';
+	
+	$markUp .= '</div>';
+	$markUp .= '<div class="footerBottom">&nbsp;</div>';	  
+	$markUp .= '</div>';
+	
+	return $markUp;
+}
+
+function drawFootNav(){
+	
+	$markUp  = '<ul id="footNav">';
+	$markUp .= '<li><a href="#">Home</a></li>';
+	$markUp .= '<li><a href="#">Story</a></li>';
+	$markUp .= '<li><a href="#">Portfolio</a></li>';
+	$markUp .= '<li><a href="#">Testimonial</a></li>';
+	$markUp .= '<li><a href="#">Package</a></li>';
+	$markUp .= '<li><a href="#">Contact</a></li>';
+	$markUp .= '</ul>';
+	
+	return $markUp;
+}
+
+function rotatingBanner($img1, $img2, $img3, $img4 ){
+	$markUp  = '<div id="bannerWrap">';
+	$markUp .= '<img class="bannerItem" src="'.$img1.'" />';
+	$markUp .= '<img class="bannerItem" src="'.$img2.'" />';
+	$markUp .= '<img class="bannerItem" src="'.$img3.'" />';
+	$markUp .= '<img class="bannerItem" src="'.$img4.'" />';
+	$markUp .= '</div>';
+	
+	return $markUp;
+	
+	
+}
+
+
+?>
